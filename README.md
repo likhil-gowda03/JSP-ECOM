@@ -674,6 +674,28 @@ Defines URL patterns for controllers (CartControl, LoginControl, etc.)
 - javax.servlet:jstl (JSP Standard Tag Library)
 - mysql:mysql-connector-java (JDBC driver)
 
+## 🌐 Cloud Deployment (Railway / Render)
+
+Since Netlify only hosts static files, this dynamic Java JSP/Servlet application must be deployed using a containerized platform like **Railway** or **Render**. We have pre-configured a [Dockerfile](file:///c:/Users/likhi/Music/web-ecommerce-website-main/Dockerfile) at the root of the project to package Tomcat 9 and compile the application automatically.
+
+### Environment Variables
+Configure these variables in your hosting provider's dashboard so the Java container can connect to your cloud database instance:
+* `DB_URL`: The JDBC connection URL (e.g. `jdbc:mysql://<db-host>:<port>/jsp-servlet-ecommerce-website`)
+* `DB_USER`: The cloud database username
+* `DB_PASSWORD`: The cloud database password
+
+### Setup Steps
+1. **Deploy MySQL Database**:
+   - Spin up a MySQL database service on Railway or Render.
+   - Connect using any SQL client (like MySQL Workbench) and run the base schema [Dump20210903.sql](file:///c:/Users/likhi/Music/web-ecommerce-website-main/JSP-Ecom-Application-main/Dump20210903.sql) first.
+   - Run the custom updates in order: `update_children_and_sports.sql`, `update_watches_category.sql`, and `update_shoes_category.sql`.
+
+2. **Deploy Tomcat App Service**:
+   - Create a new Web Service and link your GitHub repository.
+   - The platform will auto-detect the root `Dockerfile` and build the container.
+   - Supply the `DB_URL`, `DB_USER`, and `DB_PASSWORD` variables under settings.
+   - Once deployment finishes, access the live link.
+
 ## 📚 Additional Resources
 
 - [Java Servlet Documentation](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html)
