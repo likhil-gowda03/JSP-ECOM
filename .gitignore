@@ -1,0 +1,19 @@
+# Maven build output
+JSP-Ecom-Application-main/target/
+
+# Tomcat internal files (logs, compiled JSPs, WAR deployments)
+JSP-Ecom-Application-main/.tomcat/apache-tomcat-9.0.87/logs/
+JSP-Ecom-Application-main/.tomcat/apache-tomcat-9.0.87/work/
+JSP-Ecom-Application-main/.tomcat/apache-tomcat-9.0.87/webapps/
+
+# IDE and editor files
+JSP-Ecom-Application-main/.idea/
+JSP-Ecom-Application-main/.settings/
+*.iml
+*.classpath
+*.project
+
+# Node.js (for screenshot tools)
+JSP-Ecom-Application-main/node_modules/
+node_modules/
+package-lock.json

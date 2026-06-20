@@ -1,0 +1,3 @@
+USE `jsp-servlet-ecommerce-website`;
+INSERT INTO product (product_name, product_price, product_description, fk_category_id, fk_account_id, product_is_deleted, product_amount, product_image_url) VALUES ('Elegant Evening Dress', 1500.00, 'A beautiful elegant evening dress perfect for special occasions.', 2, 1, 0, 50, 'static/images/womens_dress.jpg');
+INSERT INTO product (product_name, product_price, product_description, fk_category_id, fk_account_id, product_is_deleted, product_amount, product_image_url) VALUES ('Stylish Designer Handbag', 2500.00, 'A premium stylish designer handbag made with high-quality materials.', 2, 1, 0, 30, 'static/images/womens_handbag.jpg');
